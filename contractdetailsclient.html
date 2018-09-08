@@ -1,0 +1,68 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Eopie Riders</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col center">
+                <h1>EOPIE Delivery</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col center">
+                <h2>Contract Details</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8">
+                <p id="driverAssigned">Waiting for a Driver!</p> <!--Update this when a driver is assigned!-->
+            </div>
+            <div class="col-sm-4">
+                    <button id="callDriver" class="btn btn-secondary nomargin">Call Driver</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8">
+                <p id="destinationAddress">Insert the address here</p>
+            </div>
+            <div class="col-sm-4">
+                <button id="currentLocation" class="btn btn-secondary nomargin">Current Location</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8">
+                <p>Price:</p>
+            </div>
+            <div class="col-sm-4">
+                <p id="contractPrice">Change me dynamically!</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8">
+                <p>Estimated Delivery Date:</p>
+            </div>
+            <div class="col-sm-4">
+                <p id="deliveryEstimate">Change me!</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 center">
+                <button class="btn btn-primary" id="cancelOffer">Cancel Delivery</button>
+            </div>
+            <div class="col-sm-6 center">
+                    <button class="btn btn-primary" id="returnPrior">BacK</button>
+                </div>
+        </div>
+    </div>
+</body>
+</html>

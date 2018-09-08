@@ -18,6 +18,10 @@ textarea {
     width: 67%;
 }
 
+p {
+    margin-bottom: 0.5rem;
+}
+
 
 .center { /* use any time something needs to be center */
     text-align: center;
@@ -25,4 +29,8 @@ textarea {
 
 .btn {
     margin: 0.5rem 0;
+}
+
+.nomargin {
+    margin-top: 0;
 }
