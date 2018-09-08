@@ -11,7 +11,8 @@ create table client(
 	phone varchar(16) not null,
 	name varchar(25) not null default '',
 	phoneConfirmed bit not null default 0,
-	wechat varchar(40)
+	wechat varchar(40),
+	password varchar(35) not null
 )engine=innoDB charset=utf8;
 
 create table driver(
