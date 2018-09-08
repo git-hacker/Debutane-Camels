@@ -1,0 +1,101 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Eopie Riders</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="center" id="title">Eopie Rider Deliveries</h1>
+        <h2 class="center" id="page-title">Create a New Shipping Account</h2>
+        <p><em>*Required Field</em></p>
+        <form method="post" action="" id="clientRegistration" class="form-horizontal" role="form">
+            <div class="form-group">
+                <label class="control-label col-sm-3" for="clientName">*Name:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="clientName" placeholder="Your Name" required />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-3" for="clientCompany">Company Name:</label>    
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="clientCompany" placeholder="Your Company Name" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-3" for="telephoneNumber">*Telephone Number:</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="telephoneNumber" pattern="[0-9]{11}" placeholder="11122223333"  />            
+                </div>
+                <div class="col-sm-3">
+                    <button class="btn btn-primary" id="sendSMS">Send SMS Code</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-5">
+                    <input type="text" class="form-control" id="smsCode" pattern="[0-9]{6}" placeholder="123456" />
+                </div>
+                <div class="col-sm-4">
+                    <button class="btn btn-primary" id="verifyCode">Verify</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-3" for="clientPassword">Password:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="clientPassword" pattern="[a-zA-Z0-9]" placeholder="6 characters" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-3" for="address">*Address</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="address" placeholder="123 Wisteria Lane" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-3" for="city">*City:</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="city" placeholder="Sunnyvale" />
+                </div>
+                <label class="control-label col-sm-3" for="province">*Province:</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="province" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-3" for="paymentMethod">*Payment Method:</label>
+                <div class="col-sm-3">
+                    <select class="form-control">
+                        <option disabled selected>
+                            Select A Payment Method
+                        </option>
+                        <option value="Alipay">
+                            Alipay
+                        </option>
+                        <option value="WeChat">
+                            WeChat
+                        </option>
+                        <option value="UnionPay">
+                            Union Pay
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-6">
+                    <input type="submit" class="btn btn-primary" value="Create Account" />
+                </div>
+                <div class="col-sm-6">
+                    <input type="reset" class="btn btn-warning" value="Cancel" />
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
