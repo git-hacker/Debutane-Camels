@@ -14,25 +14,19 @@
 <body>
     <div class="container">
         <h1 class="center" id="title">Eopie Rider Deliveries</h1>
-        <h2 class="center" id="page-title">Create a New Shipping Account</h2>
+        <h2 class="center" id="page-title">Create a New Driver Account</h2>
         <p><em>*Required Field</em></p>
-        <form method="post" action="" id="clientRegistration" class="form-horizontal" role="form">
+        <form method="post" action="" id="driverRegistration" class="form-horizontal" role="form">
             <div class="form-group">
-                <label class="control-label col-sm-3" for="clientName">*Name:</label>
+                <label class="control-label col-sm-3" for="driverName">*Name:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="clientName" placeholder="Your Name" required />
+                    <input type="text" class="form-control" id="driverName" placeholder="Your Name" required />
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-sm-3" for="clientCompany">Company Name:</label>    
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" id="clientCompany" placeholder="Your Company Name" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-3" for="telephoneNumber">*Telephone Number:</label>
+                <label class="control-label col-sm-3" for="telephoneNumberDriver">*Telephone Number:</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="telephoneNumber" pattern="[0-9]{11}" placeholder="11122223333"  />            
+                    <input type="text" class="form-control" id="telephoneNumberDriver" pattern="[0-9]{11}" placeholder="11122223333"  />            
                 </div>
                 <div class="col-sm-3">
                     <button class="btn btn-primary" id="sendSMS">Send SMS Code</button>
@@ -53,25 +47,33 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-sm-3" for="address">*Address</label>
+                <label class="control-label col-sm-3" for="idNumber">*ID Number:</label>    
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="address" placeholder="123 Wisteria Lane" />
+                    <input type="text" class="form-control" id="idNumber" placeholder="Your ID Card Number" pattern="[xX0-9]{18}" />
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-sm-3" for="city">*City:</label>
-                <div class="col-sm-3">
-                    <input type="text" class="form-control" id="city" placeholder="Sunnyvale" />
-                </div>
-                <label class="control-label col-sm-3" for="province">*Province:</label>
-                <div class="col-sm-3">
-                    <input type="text" class="form-control" id="province" />
+                <label class="control-label col-sm-3" for="vehicleType">*Vehicle Type:</label>
+                <div class="col-sm-9">
+                    <select id="vehicleType" class="form-control" required>
+                        <option selected disabled>Select your vehicle type</option>
+                        <option value="SVLO">Small Vehicle - Local Only</option>
+                        <option value="small">Small Vehicle</option>
+                        <option value="smallTruck">Small Truck</option>
+                        <option value="largeTruck">Large Truck</option>
+                    </select>
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-sm-3" for="paymentMethod">*Payment Method:</label>
+                <label class="control-label col-sm-3" for="licensePlate">*Plate Number</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="licensePlate" required />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-3" for="paymentMethodDriver">*Payment Method:</label>
                 <div class="col-sm-3">
-                    <select class="form-control" id="paymentMethod">
+                    <select class="form-control" id="paymentMethodDriver">
                         <option disabled selected>
                             Select A Payment Method
                         </option>
