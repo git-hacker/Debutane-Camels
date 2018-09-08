@@ -14,6 +14,11 @@ h1 {
     margin-top: 1rem; /* creates a but of space at the top */
 }
 
+textarea {
+    width: 67%;
+}
+
+
 .center { /* use any time something needs to be center */
     text-align: center;
 }

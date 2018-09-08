@@ -1,0 +1,128 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Eopie Riders</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col center">
+                <h1>EOPIE Delivery</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col center">
+                <h2>Create New Shipment</h2>
+            </div>    
+        </div>
+        <form id="createShipment" function="form">
+            <p>*Required Field</p>
+        <fieldset>
+            <legend>Shipper Information</legend>
+            <div class="form-group row">
+                <label for="shipperName" class="col-sm-4 col-form-label">Shipper's Name:</label>
+                <div class="col-sm-8">
+                    <input type="text" readonly id="shipperName" class="form-control-plaintext" value="Generate Me Dynamically" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="shipperPhone" class="col-sm-4 col-form-label">Shipper's Telephone:</label>
+                <div class="col-sm-8">
+                    <input type="text" readonly id="shipperPhone" class="form-control-plaintext" value="Generate Me Dynamically" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="shipperAddress" class="col-sm-3 col-form-label">Address:</label>
+                <div class="col-sm-6">
+                    <p class="form-control-plaintext">Generate Me Dynamically</p>
+                </div>
+                <div class="col-sm-3">
+                    <button class="btn btn-primary">Edit</button>
+                </div>
+            </div>
+            </fieldset>
+            <fieldset>
+                <legend>Recipient Information</legend>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="recipientName">*Recipient Name:</label>
+                <div class="col-sm-8">
+                    <input type="text" id="recipientName" class="form-control" required />
+                </div>
+            </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="recipientPhone">*Recipient Phone:</label>
+                    <div  class="col-sm-8">
+                        <input type="text" id="recipientPhone" class="form-control" required pattern="[0-9]{11}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="recipientAddress" class="col-sm-4 col-form-label">*Destintion Address:</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="recipientAddress" class="form-control" required />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="recipientCity" class="col-sm-3 col-form-label">*City:</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="recipientCity" required />
+                    </div>
+                    <label for="recipientProvince" class="col-sm-3 col-form-label">*Province:</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="recipientProvince" required />
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>
+                    Product Information
+                </legend>
+                <div class="form-group row">
+                    <label for="quantity" class="col-sm-2 col-form-label">*Quantity:</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="quantity" pattern="[0-9]" required/>
+                    </div>
+                    <label for="description" class="col-sm-2 col-form-label">*Product Description:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="description" required />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="vehicleNeeded" class="col-sm-4 col-form-label">*Vehicle Type Needed:</label>
+                    <div class="col-sm-8">
+                        <select id="vehicleNeeded" class="form-control">
+                                <option selected disabled>Select your vehicle type</option>
+                                <option value="SVLO">Small Vehicle - Local Only</option>
+                                <option value="small">Small Vehicle</option>
+                                <option value="smallTruck">Small Truck</option>
+                                <option value="largeTruck">Large Truck</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="comments" class="col-sm-4 col-form-label">Additional Information:</label>
+                    <div class="col-sm-8">
+                        <textarea></textarea>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="submit" class="btn btn-primary" />
+                </div>
+                <div class="col-sm-6">
+                    <input type="reset" class="btn btn-warning" />
+                    </div>
+            </div>
+        </div>
+    </form>
+    </div>
+</body>
+</html>
