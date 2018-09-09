@@ -26,7 +26,10 @@ create table driver(
 	weightLimit int not null default 0 comment 'kg',
 	truckHeight int not null default 180 comment 'cm',
 	specialQualification varchar(25) not null default '',
-	wechat varchar(40)
+	longx varchar(10) not null default ' ',
+	longy varchar(10) not null default ' ',
+	wechat varchar(40),
+	password varchar(35) not null
 )engine=innoDB charset=utf8;
 
 create table contract(
@@ -34,21 +37,17 @@ create table contract(
 	clientID varchar(32) not null,
 	driverID varchar(32),
 	price varchar(10) not null default '0',
-	initiateLocation varchar(28) not null,
-	finalLocation varchar(28) not null,
+	startX varchar(10) not null default '0',
+	startY varchar(10) not null default '0',
+	endX varchar(10) not null default '0',
+	endY varchar(10) not null default '0',
 	recipientPhone varchar(11) not null default '',
 	recipientName varchar(20) not null default '',
 	initiateTime datetime not null default now(),
-	completionTime datetime,
 	completionCode varchar(4) not null comment 'a code for the recipient to give to the driver to prove contract completion',
 	isDirect bit not null default 0 comment '0 for not direct 1 for direct',
 	accepted bit not null default 0 comment '0 for no, 1 for yes, regarding whethor or not a driver has accepted the contract',
 	foreign key (clientID) references client(id),
 	foreign key (driverID) references driver(id)
-)engine=innoDB charset=utf8;
-
-
-create table oldContracts(
-
 )engine=innoDB charset=utf8;
 
