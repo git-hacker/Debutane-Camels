@@ -87,6 +87,8 @@ function createRandomContract(){
                 endY: 24,
                 isDirect: 0, //0 for no 1 for yes
                 price: 35.15, 
+                startAddress: "444 mrt lane",
+                endAddress: "1004 new york"
         },
         async:true,
         success:function(resp){
