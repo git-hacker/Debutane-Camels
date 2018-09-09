@@ -1,32 +1,79 @@
+loginDriver();
+//createRandomContract();
+//registerADriver();
+var currentUserID = "none"; //important global variable, currently set when using loginDriver()
 
-var currentUserID = "none";    //important global variable, currently set when using loginDriver()
+function loginDriver(){
+        $.ajax({
+        type:"post",
+        url:"DriverLoginServlet",
+        data: {
+                phone: '18780164434',
+                password: 'iijijij'
+        },
+        async:true,
+        success:function(resp){
+            
+            var respData = resp.split("奶奶奶"); //DRIVER info and ACCEPTED CONTRACT INFO split between "奶奶奶"
+            var driverInfo = respData[0];
+            var accptedContractInfo = "";
+            alert("driver data: " + driverInfo);
+            if(respData.length > 0){
+                accptedContractInfo = respData[1];  //information of all accepted contracts
+                alert("contract data: " + respData[1]);
+            }
+            currentUserID = driverInfo.substring(10,42);  //takes out the driver id
+            updateDriverLocation();
+        },
+        error:function(){
+            
+        }
+        });
+}
+
+function updateDriverLocation(){
+        $.ajax({
+        type:"post",
+        url:"UpdateDriverLocationServlet",
+        data: {
+                driverID: currentUserID,
+                longx: 22.3333,
+                laty: 113.1454
+        },
+        async:true,
+        success:function(resp){
+            alert(resp); //true if success, false if failed to accept
+        },
+        error:function(){
+            
+        }
+        });
+}
+
+function acceptContract(){
+        $.ajax({
+        type:"post",
+        url:"DriverAcceptContractServlet",
+        data: {
+                driverID: currentUserID,
+                contractID: '88eeccb5bc934115b5823c9a365a62f0'
+        },
+        async:true,
+        success:function(resp){
+            alert(resp); //true if success, false if failed to accept
+        },
+        error:function(){
+            
+        }
+        });
+}
+    
+
+    
+    
 
 
-function registerADriver(){
-    $.ajax({
-    type:"post",
-    url:"CreateDriverServlet",
-    data: {
-            phone: '18780164434',
-            driverLiscNo: '18780164434',
-            idcardNo: '84846102306574',
-            weightLimit: 950,
-            specialQualification: 'Ice',
-            truckHeight: 23.4,
-            password:"iijijij"
-    },
-    async:true,
-    success:function(resp){
-
-        alert(resp); // resp is the new ID for the driver account
-    },
-    error:function(){
-
-    }
-    });
-
-
-function createContract(){
+function createRandomContract(){
         $.ajax({
         type:"post",
         url:"CreateContractServlet",
@@ -55,28 +102,24 @@ function createContract(){
         }
         });
 }
-
-
-function loginDriver(){
+    
+function registerADriver(){
         $.ajax({
         type:"post",
-        url:"DriverLoginServlet",
+        url:"CreateDriverServlet",
         data: {
                 phone: '18780164434',
-                password: 'iijijij'
+                driverLiscNo: '18780164434',
+                idcardNo: '84846102306574',
+                weightLimit: 950,
+                specialQualification: 'Ice',
+                truckHeight: 23.4,
+                password:"iijijij"
         },
         async:true,
         success:function(resp){
+
             alert(resp);
-            var respData = resp.split("奶奶奶"); //DRIVER info and ACCEPTED CONTRACT INFO split between "奶奶奶"
-            var driverInfo = respData[0];
-            var accptedContractInfo = "";
-            if(respData.length > 0){
-                accptedContractInfo = respData[1];
-            }
-            currentUserID = driverInfo.substring(10,42);  //takes out the 
-            //driverInfo = JSON.parse(driverInfo); // NEEDS TO BE FIXED
-            alert(currentUserID);
         },
         error:function(){
             
