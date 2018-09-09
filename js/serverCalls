@@ -1,3 +1,7 @@
+
+var currentUserID = "none";    //important global variable, currently set when using loginDriver()
+
+
 function registerADriver(){
     $.ajax({
     type:"post",
@@ -45,6 +49,34 @@ function createContract(){
             } else {
                 alert(resp);
             }
+        },
+        error:function(){
+            
+        }
+        });
+}
+
+
+function loginDriver(){
+        $.ajax({
+        type:"post",
+        url:"DriverLoginServlet",
+        data: {
+                phone: '18780164434',
+                password: 'iijijij'
+        },
+        async:true,
+        success:function(resp){
+            alert(resp);
+            var respData = resp.split("奶奶奶"); //DRIVER info and ACCEPTED CONTRACT INFO split between "奶奶奶"
+            var driverInfo = respData[0];
+            var accptedContractInfo = "";
+            if(respData.length > 0){
+                accptedContractInfo = respData[1];
+            }
+            currentUserID = driverInfo.substring(10,42);  //takes out the 
+            //driverInfo = JSON.parse(driverInfo); // NEEDS TO BE FIXED
+            alert(currentUserID);
         },
         error:function(){
             
