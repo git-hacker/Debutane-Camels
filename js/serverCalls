@@ -23,10 +23,10 @@ function loginDriver(){
                 alert("contract data: " + respData[1]);
             }
             currentUserID = driverInfo.substring(10,42);  //takes out the driver id
-            updateDriverLocation();
+            //acceptContract();
+        updateDriverLocation();
         },
         error:function(){
-            
         }
         });
 }
@@ -56,7 +56,7 @@ function acceptContract(){
         url:"DriverAcceptContractServlet",
         data: {
                 driverID: currentUserID,
-                contractID: '88eeccb5bc934115b5823c9a365a62f0'
+                contractID: 'c07ff8d6dd7143609668df5efaf0cc78'
         },
         async:true,
         success:function(resp){
@@ -67,11 +67,6 @@ function acceptContract(){
         }
         });
 }
-    
-
-    
-    
-
 
 function createRandomContract(){
         $.ajax({
@@ -85,7 +80,7 @@ function createRandomContract(){
                 startY: 40,
                 endX: 40,
                 endY: 24,
-                isDirect: 0, //0 for no 1 for yes
+                isDirect: '0', //0 for no 1 for yes
                 price: 35.15, 
                 startAddress: "444 mrt lane",
                 endAddress: "1004 new york"
