@@ -51,3 +51,4 @@ create table contract(
 	foreign key (driverID) references driver(id)
 )engine=innoDB charset=utf8;
 
+insert into client(id,phone,name,phoneConfirmed,wechat,password) values('4184761sdfsdfc','18780164434','Erich L',1,'yingwuyingyu','remoter');
