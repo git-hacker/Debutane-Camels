@@ -20,3 +20,34 @@ function registerADriver(){
 
     }
     });
+
+
+function createContract(){
+        $.ajax({
+        type:"post",
+        url:"CreateContractServlet",
+        data: {
+                recipientPhone: '18780164434',
+                recipientName: 'Mommy',
+                clientID: 'abdggjsj49tf92jffvbbxzza',  //if empty, makes up a random userID
+                startX: 23.4,
+                startY: 40,
+                endX: 40,
+                endY: 24,
+                isDirect: 0, //0 for no 1 for yes
+                price: 35.15, 
+        },
+        async:true,
+        success:function(resp){
+            if(resp.charAt(0) == "驶"){
+                var completionCode = resp.substring(1);
+                alert("Give this code to the driver upload recieving your goods: " + completionCode);
+            } else {
+                alert(resp);
+            }
+        },
+        error:function(){
+            
+        }
+        });
+}
