@@ -43,11 +43,11 @@ create table contract(
 	endY varchar(10) not null default '0',
 	recipientPhone varchar(11) not null default '',
 	recipientName varchar(20) not null default '',
-	initiateTime datetime not null default now(),
+	postTime datetime not null default now(),
+	acceptTime datetime,
 	completionCode varchar(4) not null comment 'a code for the recipient to give to the driver to prove contract completion',
 	isDirect bit not null default 0 comment '0 for not direct 1 for direct',
 	accepted bit not null default 0 comment '0 for no, 1 for yes, regarding whethor or not a driver has accepted the contract',
-	foreign key (clientID) references client(id),
 	foreign key (driverID) references driver(id)
 )engine=innoDB charset=utf8;
 
