@@ -1,0 +1,22 @@
+function registerADriver(){
+    $.ajax({
+    type:"post",
+    url:"CreateDriverServlet",
+    data: {
+            phone: '18780164434',
+            driverLiscNo: '18780164434',
+            idcardNo: '84846102306574',
+            weightLimit: 950,
+            specialQualification: 'Ice',
+            truckHeight: 23.4,
+            password:"iijijij"
+    },
+    async:true,
+    success:function(resp){
+
+        alert(resp);
+    },
+    error:function(){
+
+    }
+    });
