@@ -14,7 +14,7 @@ function registerADriver(){
     async:true,
     success:function(resp){
 
-        alert(resp);
+        alert(resp); // resp is the new ID for the driver account
     },
     error:function(){
 
